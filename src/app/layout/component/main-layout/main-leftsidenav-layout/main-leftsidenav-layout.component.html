@@ -1,0 +1,63 @@
+<!-- <p>main-leftsidenav-layout works!</p>
+<nav>
+  <a routerLink="/crm/customer" routerLinkActive="active">Customer</a>
+  <a routerLink="/crm/vendor" routerLinkActive="active">Vendor</a>
+</nav> -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar class="vertical-menu">Menu</mat-toolbar>
+    <mat-nav-list>
+      <!-- <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a> -->
+      <h3 matSubheader>Master</h3>
+      <a mat-list-item routerLink="/crm/customer" routerLinkActive="active"
+        >Customer</a
+      >
+      <a mat-list-item routerLink="/crm/vendor" routerLinkActive="active"
+        >Vendor</a
+      >
+      <!-- (click)="drawer.toggle()" -->
+      <h3 matSubheader>Transaction</h3>
+      <h3 matSubheader>Report</h3>
+      <h3 matSubheader>Setting</h3>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>RF Website</span>
+
+      <mat-divider #navdivider></mat-divider>
+
+      <span class="toolbar-filler"></span>
+      <P class="p-welcome-user" *ngIf="isLoggedIn()">
+        Welcome :- {{ _logedInUserName }}</P
+      >
+      <button (click)="login()" *ngIf="!isLoggedIn()">SIGN IN</button>
+      <button (click)="logout()" *ngIf="isLoggedIn()">SIGN OUT</button>
+      <!-- <button id="button-logout" md-button (click)="navigatetologin()">
+        Log Out
+      </button> -->
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <!-- <ng-container style="height: 100%; width: 100%"></ng-container> -->
+    <!-- <router-outlet></router-outlet> -->
+    <app-main-content-layout></app-main-content-layout>
+    <app-main-footer-layout></app-main-footer-layout>
+  </mat-sidenav-content>
+</mat-sidenav-container>

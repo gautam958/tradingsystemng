@@ -1,0 +1,44 @@
+<div class="loginmaindiv">
+  <h1 style="text-align: center">RF Website</h1>
+  <div class="login">
+    <h2 class="login-header">Log in</h2>
+    <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+      <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+        <input
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+          autofocus
+          autocomplete="username"
+        />
+      </p>
+      <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+        <div *ngIf="formControls.email.errors.required">Email is required</div>
+        <div *ngIf="formControls.email.errors.email">
+          Email is not in correct format
+        </div>
+      </div>
+      <p
+        [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }"
+      >
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+      </p>
+      <div
+        *ngIf="isSubmitted && formControls.password.errors"
+        class="help-block"
+      >
+        <div *ngIf="formControls.password.errors.required">
+          Password is required
+        </div>
+      </div>
+      <p><input type="submit" value="Log in" /></p>
+    </form>
+    <h3 class="login-footer">Copyright ASWatson @ 2021</h3>
+  </div>
+</div>
+<!-- {{ loginForm.value | json }} -->
+<!-- <button (click)="login('xyz')">login</button> -->
