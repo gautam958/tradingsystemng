@@ -1,0 +1,21 @@
+[
+  {
+    "id":"1",
+  "cust_name":"Gautam Kumar",
+  "cust_email":"gautam958@gmail.com",
+  "cust_phone":"+852 53451910",
+  "cust_address":"9/F Room B Block E Kimberley Mansion Kowloon HK",
+  "cust_country":"Hong Kong",
+  "cust_active":"True"
+    },
+    {
+      "id":"2",
+    "cust_name":"Vijay Nath",
+    "cust_email":"VijayNath@gmail.com",
+    "cust_phone":"+852 235566",
+    "cust_address":"4/F Room A Block R City One Shatin HK",
+    "cust_country":"Hong Kong",
+    "cust_active":"True"
+      }
+
+]
