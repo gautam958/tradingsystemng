@@ -1,4 +1,6 @@
-[
+   {
+   "customerData":
+   [
   {
     "id":"1",
   "cust_name":"Gautam Kumar",
@@ -16,6 +18,64 @@
     "cust_address":"4/F Room A Block R City One Shatin HK",
     "cust_country":"Hong Kong",
     "cust_active":"True"
-      }
+      },
+      {
+        "id":"3",
+      "cust_name":"Sumit Garg",
+      "cust_email":"sumit@gmail.com",
+      "cust_phone":"+852 3265656",
+      "cust_address":"Ground Floor Room D Block B City One Shatin HK",
+      "cust_country":"Hong Kong",
+      "cust_active":"False"
+        },
+        {
+          "id":"4",
+        "cust_name":"Kunal Khemu",
+        "cust_email":"sumit@gmail.com",
+        "cust_phone":"+852 3265656",
+        "cust_address":"Ground Floor Room D Block B City One Shatin HK",
+        "cust_country":"Hong Kong",
+        "cust_active":"False"
+          }
+          ,
+        {
+          "id":"5",
+        "cust_name":"Amar pratap",
+        "cust_email":"sumit@gmail.com",
+        "cust_phone":"+91 98562368",
+        "cust_address":"Ground Floor Room D Block B City One Shatin HK",
+        "cust_country":"Hong Kong",
+        "cust_active":"False"
+          }
+          ,
+          {
+            "id":"6",
+          "cust_name":"Prem Pratap",
+          "cust_email":"prem@gmail.com",
+          "cust_phone":"+91 975689562",
+          "cust_address":"Ground Floor Room D Block B City One Shatin HK",
+          "cust_country":"Hong Kong",
+          "cust_active":"False"
+            }
+            ,
+          {
+            "id":"7",
+          "cust_name":"Virat Kumar",
+          "cust_email":"virathk958@gmail.com",
+          "cust_phone":"+91 9650979813",
+          "cust_address":"9/F Room B Block E Kimberley Mansion Kowloon HK",
+          "cust_country":"Hong Kong",
+          "cust_active":"True"
+            },
+            {
+              "id":"8",
+            "cust_name":"Rupa Kumari",
+            "cust_email":"rupsa958@gmail.com",
+            "cust_phone":"+91 9650979813",
+            "cust_address":"9/F Room B Block E Kimberley Mansion Kowloon HK",
+            "cust_country":"Hong Kong",
+            "cust_active":"True"
+              }
 
-]
+]}
+

@@ -1,10 +1,26 @@
 <div>
-  <form class="example-form" [formGroup]="customerForm" (submit)="onSubmit()">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Customer Name</mat-label>
-      <input matInput formControlName="cust_name" />
-    </mat-form-field>
-
+  <form
+    class="example-form"
+    [formGroup]="customerForm"
+    (ngSubmit)="onSubmit()"
+    focusInvalidInput
+  >
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Customer id</mat-label>
+            <input matInput formControlName="id" #id autofocus />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Customer Name</mat-label>
+            <input matInput formControlName="cust_name" #cust_name />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
     <table class="example-full-width" cellspacing="0">
       <tr>
         <td>

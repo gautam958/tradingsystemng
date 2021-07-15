@@ -24,3 +24,13 @@ ul {
   list-style-type: none;
   margin-top: 4px;
 }
+label {
+  display: block;
+}
+
+input.ng-invalid:focus {
+  outline-color: rgb(250, 55, 7);
+}
+.mat-form-field {
+  margin-right: 8px;
+}

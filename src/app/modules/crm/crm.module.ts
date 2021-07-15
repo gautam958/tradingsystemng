@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomerListComponent } from './master/component/customer/customer-list/customer-list.component';
 import { CustomerAddnewComponent } from './master/component/customer/customer-addnew/customer-addnew.component';
 import { MaterialModules } from 'src/app/shared/MaterialModules';
+import { FormDirective } from './form.directive';
 @NgModule({
   declarations: [
     CustomerComponent,
@@ -18,6 +19,7 @@ import { MaterialModules } from 'src/app/shared/MaterialModules';
     PendingOrderComponent,
     CustomerListComponent,
     CustomerAddnewComponent,
+    FormDirective,
   ],
   imports: [
     CommonModule,

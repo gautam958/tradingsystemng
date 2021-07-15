@@ -16,7 +16,8 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
-    "resolveJsonModule":true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "lib": [
       "es2018",
       "dom"
@@ -28,5 +29,5 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "resolveJsonModule": true,
+
 }
