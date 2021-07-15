@@ -18,15 +18,30 @@
       <a mat-list-item href="#">Link 2</a>
       <a mat-list-item href="#">Link 3</a> -->
       <h3 matSubheader>Master</h3>
-      <a mat-list-item routerLink="/crm/customer" routerLinkActive="active"
+      <a
+        mat-list-item
+        routerLink="/crm/master/customer"
+        routerLinkActive="active"
         >Customer</a
       >
-      <a mat-list-item routerLink="/crm/vendor" routerLinkActive="active"
+      <a mat-list-item routerLink="/crm/master/vendor" routerLinkActive="active"
         >Vendor</a
       >
       <!-- (click)="drawer.toggle()" -->
       <h3 matSubheader>Transaction</h3>
+      <a
+        mat-list-item
+        routerLink="/crm/transaction/Customer-Order"
+        routerLinkActive="active"
+        >Customer-Order</a
+      >
       <h3 matSubheader>Report</h3>
+      <a
+        mat-list-item
+        routerLink="/crm/rerport/Pending-Order"
+        routerLinkActive="active"
+        >Pending-Order</a
+      >
       <h3 matSubheader>Setting</h3>
     </mat-nav-list>
   </mat-sidenav>

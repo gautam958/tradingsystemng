@@ -1,12 +1,20 @@
-<div style="padding: 20px">
+<div>
   <mat-card>
-    <mat-card-title>Customer - Add New</mat-card-title>
+    <mat-card-title
+      >Customer - Add New
+      <a
+        routerLink="/crm/master/customer-list"
+        style="font-size: medium; text-decoration: none; float: right"
+      >
+        [View Customer List]
+      </a>
+    </mat-card-title>
     <app-customer-addnew></app-customer-addnew>
   </mat-card>
 </div>
-<div style="padding: 20px">
+<!-- <div style="padding: 20px">
   <mat-card>
     <mat-card-title>Customer - List</mat-card-title>
     <app-customer-list></app-customer-list>
   </mat-card>
-</div>
+</div> -->

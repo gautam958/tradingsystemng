@@ -20,14 +20,15 @@ export class CustomerAddnewComponent implements OnInit {
     cust_phone: new FormControl('', [Validators.required]),
     cust_address: new FormControl('', [Validators.required]),
     cust_country: new FormControl('', []),
-    cust_active: new FormControl(true, [Validators.required]),
+    cust_active: new FormControl(true),
   });
   onSubmit() {
     // console.warn(this.customerForm.value);
     if (this.customerForm.valid) {
       // console.warn(this.customerForm.value);
       this.Customers.push(this.customerForm.value);
-      // console.warn(this.Customers);
+
+      console.warn(this.Customers);
       this.MessageBox.openSnackBar(
         'New Customer',
         'Data Saved Successfully!!!'

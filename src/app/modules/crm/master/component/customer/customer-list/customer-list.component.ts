@@ -14,6 +14,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 export class CustomerListComponent implements OnInit, AfterViewInit {
   initialSelection = [];
   allowMultiSelect = true;
+  TotalRows = 0;
   selection = new SelectionModel<customermodel>(
     this.allowMultiSelect,
     this.initialSelection
@@ -35,6 +36,7 @@ export class CustomerListComponent implements OnInit, AfterViewInit {
     'cust_country',
     'cust_active',
   ];
+  displayedColumnsFooter: string[] = ['id'];
   Customers: customermodel[] = customerData.customerData;
   dataSource = new MatTableDataSource<customermodel>(this.Customers);
 
@@ -49,7 +51,9 @@ export class CustomerListComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.TotalRows = this.dataSource.data.length;
+  }
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
