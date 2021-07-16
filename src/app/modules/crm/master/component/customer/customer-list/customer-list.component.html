@@ -1,4 +1,4 @@
-<div>
+<div id="htmlData">
   <mat-card>
     <mat-card-title
       >Customer - List
@@ -9,8 +9,27 @@
         [Add New Customer]
       </a>
     </mat-card-title>
+    <div fxLayout fxLayoutAlign="center center">
+      <mat-form-field fxFlex="40%">
+        <input
+          matInput
+          type="text"
+          (keyup)="doFilter($event)"
+          placeholder="Filter"
+        />
+      </mat-form-field>
+    </div>
     <div class="mat-elevation-z8">
-      <table mat-table [dataSource]="dataSource" matSort matSortDirection="asc">
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        matSort
+        matSortDirection="asc"
+        id="customertable"
+        matTableExporter
+        #exporter="matTableExporter"
+        [hiddenColumns]="[0]"
+      >
         <!-- Select Column -->
         <ng-container matColumnDef="select">
           <th mat-header-cell *matHeaderCellDef>
@@ -97,4 +116,22 @@
       ></mat-paginator>
     </div>
   </mat-card>
+</div>
+<div class="col-md-4 text-right">
+  <button mat-raised-button (click)="openPDF()">PDF</button>
+  <button
+    mat-raised-button
+    (click)="
+      exporter.exportTable('xlsx', {
+        fileName: 'test',
+        sheet: 'sheet_name',
+        Props: { Author: 'Talha' }
+      })
+    "
+  >
+    Excel
+  </button>
+  <button mat-raised-button (click)="exporter.exportTable('csv')">Csv</button>
+  <button mat-raised-button (click)="exporter.exportTable('json')">Json</button>
+  <button mat-raised-button (click)="exporter.exportTable('txt')">Txt</button>
 </div>

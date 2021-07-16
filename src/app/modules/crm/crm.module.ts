@@ -11,6 +11,8 @@ import { CustomerListComponent } from './master/component/customer/customer-list
 import { CustomerAddnewComponent } from './master/component/customer/customer-addnew/customer-addnew.component';
 import { MaterialModules } from 'src/app/shared/MaterialModules';
 import { FormDirective } from './form.directive';
+import { MatTableExporterModule } from 'mat-table-exporter';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     CustomerComponent,
@@ -20,6 +22,7 @@ import { FormDirective } from './form.directive';
     CustomerListComponent,
     CustomerAddnewComponent,
     FormDirective,
+    DashboardComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +30,7 @@ import { FormDirective } from './form.directive';
     FormsModule,
     ReactiveFormsModule,
     MaterialModules,
+    MatTableExporterModule,
   ],
 })
 export class CrmModule {}

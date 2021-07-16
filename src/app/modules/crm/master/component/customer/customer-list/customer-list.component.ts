@@ -1,10 +1,18 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { customermodel } from '../../../model/customer-model';
 import customerData from 'src/app/Data/customer.json';
 import { MatSort } from '@angular/material/sort';
 import { SelectionModel } from '@angular/cdk/collections';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-customer-list',
@@ -19,6 +27,9 @@ export class CustomerListComponent implements OnInit, AfterViewInit {
     this.allowMultiSelect,
     this.initialSelection
   );
+
+  @ViewChild('customertable')
+  htmlData!: ElementRef;
 
   constructor() {
     console.log('Reading local json files');
@@ -54,6 +65,9 @@ export class CustomerListComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.TotalRows = this.dataSource.data.length;
   }
+  public doFilter = (event: any) => {
+    this.dataSource.filter = event.target.value.trim().toLocaleLowerCase();
+  };
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
@@ -67,5 +81,24 @@ export class CustomerListComponent implements OnInit, AfterViewInit {
     this.isAllSelected()
       ? this.selection.clear()
       : this.dataSource.data.forEach((row) => this.selection.select(row));
+  }
+
+  public openPDF(): void {
+    let DATA: any;
+    DATA = document.getElementById('customertable');
+
+    // DATA = this.dataSource.data;
+    // console.warn(DATA);
+    html2canvas(DATA).then((canvas) => {
+      let fileWidth = 208;
+      let fileHeight = (canvas.height * fileWidth) / canvas.width;
+
+      const FILEURI = canvas.toDataURL('image/png');
+      let PDF = new jsPDF('p', 'mm', 'a4');
+      let position = 0;
+      PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
+
+      PDF.save('angular-demo.pdf');
+    });
   }
 }
