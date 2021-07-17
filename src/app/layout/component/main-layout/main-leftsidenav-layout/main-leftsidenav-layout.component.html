@@ -25,11 +25,12 @@
       <!-- <a mat-list-item href="#">Link 1</a>
       <a mat-list-item href="#">Link 2</a>
       <a mat-list-item href="#">Link 3</a> -->
-      <h3 matSubheader>Dashboard</h3>
+      <h2 matSubheader>Dashboard</h2>
       <a mat-list-item routerLink="/crm/dashboard" routerLinkActive="active"
         >Dashboard</a
       >
-      <h3 matSubheader>Master</h3>
+
+      <h2 matSubheader>Master</h2>
       <a
         mat-list-item
         routerLink="/crm/master/customer"
@@ -40,21 +41,21 @@
         >Vendor</a
       >
       <!-- (click)="drawer.toggle()" -->
-      <h3 matSubheader>Transaction</h3>
+      <h2 matSubheader>Transaction</h2>
       <a
         mat-list-item
         routerLink="/crm/transaction/Customer-Order"
         routerLinkActive="active"
         >Customer-Order</a
       >
-      <h3 matSubheader>Report</h3>
+      <h2 matSubheader>Report</h2>
       <a
         mat-list-item
         routerLink="/crm/rerport/Pending-Order"
         routerLinkActive="active"
         >Pending-Order</a
       >
-      <h3 matSubheader>Setting</h3>
+      <h2 matSubheader>Setting</h2>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -85,6 +86,6 @@
     <!-- <ng-container style="height: 100%; width: 100%"></ng-container> -->
     <!-- <router-outlet></router-outlet> -->
     <app-main-content-layout></app-main-content-layout>
-    <app-main-footer-layout></app-main-footer-layout>
+    <!-- <app-main-footer-layout></app-main-footer-layout> -->
   </mat-sidenav-content>
 </mat-sidenav-container>
